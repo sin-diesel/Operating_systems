@@ -5,36 +5,30 @@
 
 #define WAIT
 
-void get_info() {
+void get_info(int pid, int num) {
 
-    int pid = getpid();
-    int ppid = getppid();
+    int status = 0;
+
+    if (num < 0) {
+        return;
+    }
+
+    if (pid == 0) { // child
+        int new_pid = fork();
+        get_info(new_pid, num - 1);
+    } else {
+        wait(status);
+        fprintf(stdout, "PID: %d PPID: %d num: %d\n", pid, getppid(), num);
+        return;
+    }
 
 
-    fprintf(stdout, "PID: %d PPID: %d\n", pid, ppid);
 }
 
 
 int main () {
 
-    int* status = NULL;
-
-    int pid = 0;
-
-    int result = 0;
-
-    for (int i = 0; i < 3; ++i) {
-
-        pid = fork();
-
-        #ifdef WAIT
-        wait(status);
-        #endif
-
-
-    }
-
-    get_info();
+    get_info(fork(), 8);
 
     return 0;
 }
