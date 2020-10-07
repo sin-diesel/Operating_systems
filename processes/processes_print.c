@@ -17,7 +17,7 @@ void get_info(int pid, int num) {
         int new_pid = fork();
         get_info(new_pid, num - 1);
     } else {
-        wait(status);
+        wait(&status);
         fprintf(stdout, "PID: %d PPID: %d num: %d\n", pid, getppid(), num);
         return;
     }

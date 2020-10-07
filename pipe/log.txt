@@ -1,0 +1,7 @@
+total 32
+drwxr-xr-x  6 igorsidelnikov  staff   192 Sep 25 09:39 .
+drwxr-xr-x  8 igorsidelnikov  staff   256 Sep 25 09:03 ..
+-rwxr-xr-x  1 igorsidelnikov  staff  8960 Sep 25 09:36 a.out
+-rw-r--r--  1 igorsidelnikov  staff     0 Sep 25 09:39 log.txt
+prw-r--r--@ 1 igorsidelnikov  staff     0 Sep 25 09:31 mf
+-rw-r--r--@ 1 igorsidelnikov  staff   918 Sep 25 09:36 pipe_size.c
